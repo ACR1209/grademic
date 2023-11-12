@@ -11,7 +11,7 @@ export interface Option {
 }
 
 interface SelectSearchProps {
-  options: Option[];
+  options?: Option[];
   selectedOption: Option | null;
   onChange: (value: Option | null) => void;
 }
