@@ -7,7 +7,7 @@ This project is made to be used as a professor rating system for my university. 
 ## Features & roadmap
 Below I list all the features Grademic has and all the features it'll have:
 - [ ] It allows to authenticate users.
-- [ ] It allows to create new professors if not found, to create a new professor you need to include the university, the professors name, their department and a listing of the professor or any other way of showing the existence of the professor; this will have to pass human verification.
+- [x] It allows to create new professors if not found, to create a new professor you need to include the university, the professors name, their department and a listing of the professor or any other way of showing the existence of the professor; this will have to pass human verification.
 - [ ] It allows to create new universities if not found, to create a new university you will need to introduce the name, the country, the state, the city and their website; this will have to pass human verification.
 - [ ] It allows registered users to like comments.
 - [ ] It allows registered users to save professors for later review.

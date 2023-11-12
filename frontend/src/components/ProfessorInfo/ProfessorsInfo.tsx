@@ -26,7 +26,7 @@ function ProfessorsInfo({ professor }: { professor: ProfessorWithGrade }) {
       </div>
       <div className="flex flex-col justify-start md:justify-between items-start md:items-stretch ">
         <div>
-          <h1 className={`${notoSerif.className} font-bold text-4xl md:text-6xl md:w-2/3 w-full`}>
+          <h1 className={`${notoSerif.className} font-bold text-4xl md:text-6xl  w-full`}>
             {professor.firstNames} {professor.lastNames}
           </h1>
           <p
