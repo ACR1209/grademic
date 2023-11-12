@@ -79,7 +79,7 @@ const SelectSearch: FC<SelectSearchProps> = ({
       )}
 
       {isOpen && (
-        <div className="absolute left-0 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-md">
+        <div className="absolute left-0 mt-1 w-full bg-white border z-50 border-gray-300 rounded-md shadow-md">
           {filteredOptions?.length > 0 ? (
             filteredOptions?.map((option) => (
               <div
