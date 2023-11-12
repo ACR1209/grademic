@@ -37,3 +37,18 @@ export async function searchUniversity(
   }
 }
 
+export async function searchUniversityWithLimit(query:string, limit: number): Promise<University[] | null> {
+  try {
+    const records = (await pb
+      .collection("universities")
+      .getList<University>(1, limit, {
+        filter: `name ~ '${query.trim().toLowerCase()}'`,
+        expand: "state,state.country"
+      })).items;
+    return records;
+  } catch (error) {
+    console.error("Error while fetching professor: " + error);
+    return null;
+  }
+}
+
