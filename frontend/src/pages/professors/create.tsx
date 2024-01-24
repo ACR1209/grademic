@@ -34,14 +34,13 @@ function CreateProfessor() {
 
     const prof: ProfessorCreate = {
       department: selectedDepartment,
-      firstNames: firstNames,
-      lastNames: lastNames,
+      firstNames: firstNames.trim().toUpperCase(),
+      lastNames: lastNames.trim().toUpperCase(),
       proof: proof,
       isVerified: false
     }
     const err = validateProfessorCreate(prof)
 
-    console.log("gere")
     if (err.length > 0) {
       setErrors(err)
       //TODO: Show errors to user
