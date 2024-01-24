@@ -31,3 +31,13 @@ export type ReviewExpanded = {
     user?: GrademicUser
     tags?: Tag[]
 }
+
+export type ReviewData = {
+    department: string
+    qualityRating: number
+    difficultyRating: number
+    wouldTakeAgain?: boolean
+    gradeRecived?: number
+    selectedTags: Tag[]
+    writtenReview: string
+}

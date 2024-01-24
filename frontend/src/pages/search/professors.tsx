@@ -18,7 +18,7 @@ function SearchPage({ professors }: { professors: ProfessorWithGrade[] }) {
     <PageWithNavbar>
       <div className="px-20 py-10">
         <h1 className={`${notoSerif.className} font-bold text-4xl`}>
-          Resultados de búsqueda para profesores "<span>{query}</span>"
+          Resultados de búsqueda para profesores &ldquo;<span>{query}</span>&rdquo;
         </h1>
         <p className={`${inter.className} text-xl`}>
           {professors.length}{" "}
