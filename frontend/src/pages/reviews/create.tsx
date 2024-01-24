@@ -190,7 +190,7 @@ function CreateReviewPage() {
               <div className="flex flex-col w-full  space-y-2 p-2">
                 <ErrorWrapper errors={errors} name="department">
                   <label className={`${notoSerif.className} font-bold`}>
-                    Departamento
+                    Asignatura
                   </label>
                   <select
                     className="appearance-none w-full bg-white  border-grademic-black-900 border-2 rounded-md px-4 py-2 pr-8 leading-tight focus:outline-none focus:border-grademic-white-600"
