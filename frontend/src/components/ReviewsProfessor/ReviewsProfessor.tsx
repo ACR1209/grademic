@@ -14,9 +14,9 @@ function ReviewsProfessor({ reviews }: { reviews: Review[] }) {
       </h2>
       <div className="pb-10 pt-5 pr-5 flex flex-col space-y-5">
         {reviews.map((r) => (
-          <div className="lg:h-[300px] lg:w-[90%]">
+          <div key={r.id} className="lg:h-[300px] lg:w-[90%]">
 
-          <ReviewComponent review={r} key={r.id} />
+          <ReviewComponent  review={r}  />
           </div>
         ))}
       </div>

@@ -27,25 +27,24 @@ function ReviewComponent({ review }: { review: Review }) {
           </div>
         </div>
       </div>
-  
-      <div className="h-full flex lg:pl-5 mt-5 lg:mt-0 items-stretch flex-col">
-        <div className="flex-grow">
-          <h3 className={`${notoSerif.className} font-bold text-2xl`}>{review.expand?.subject?.name}</h3>
-          <div className="flex flex-wrap mb-3">
-            {
-              review?.expand?.tags?.map((t, i)=>(
-                <div className={`p-1`}>
 
-                <Tags tag={t.name} key={`${review.id}-${t.id}`}/>
-                </div>
-              ))
-            }
+      <div className="h-full w-full flex lg:pl-5 mt-5 lg:mt-0 items-stretch flex-col">
+        <div className="flex-grow">
+          <h3 className={`${notoSerif.className} font-bold text-2xl`}>
+            {review.expand?.subject?.name}
+          </h3>
+          <div className="flex flex-wrap mb-3">
+            {review?.expand?.tags?.map((t, i) => (
+              <div className={`p-1`} key={`${review.id}-${t.id}`}>
+                <Tags tag={t.name} />
+              </div>
+            ))}
           </div>
           <p className={`${inter.className}`}>{review.body}</p>
         </div>
-        <div className="flex flex-row justify-between lg:mt-0 mt-5">
-            <Likes dislikes={review.dislikes} likes={review.likes} />
-            <p>{new Date(review.created).toLocaleDateString("es-ES")}</p>
+        <div className="flex flex-row justify-between w-full lg:mt-0 mt-5">
+          <Likes dislikes={review.dislikes} likes={review.likes} />
+          <p>{new Date(review.created).toLocaleDateString("es-ES")}</p>
         </div>
       </div>
     </div>

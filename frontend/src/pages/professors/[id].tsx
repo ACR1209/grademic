@@ -8,7 +8,6 @@ import { ProfessorWithGrade } from "@/types/professorWithGrade";
 import { Review } from "@/types/reviews";
 import { pb } from "@/utils/pocketbase";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
 import { ClientResponseError } from "pocketbase";
 import React from "react";
 
