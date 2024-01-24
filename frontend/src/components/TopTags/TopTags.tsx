@@ -11,9 +11,9 @@ function TopTags({tags}: {tags: ProfessorTopTags[]}) {
 
         {
             tags.map((t)=>(
-              <div className='p-2'>
+              <div className='p-2' key={t.tag_id}>
 
-                <Tags count={t.tag_count} tag={t.tag_name} key={t.tag_id}/>
+                <Tags count={t.tag_count} tag={t.tag_name} />
               </div>
             ))
         }

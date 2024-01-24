@@ -16,6 +16,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { ValidationError } from "@/types/errors";
 import { validateReviewData } from "@/utils/review/validateReview";
 import { useRouter } from "next/router";
+import ErrorWrapper from "@/components/ErrorWrapper/ErrorWrapper";
 
 const customStyles = {
   content: {
@@ -29,7 +30,6 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#root");
 
 function CreateReviewPage() {
   const searchParams = useSearchParams();
@@ -153,7 +153,7 @@ function CreateReviewPage() {
       gradeRecived: displayGrade ? 0 : grade,
     });
 
-    console.log(errorsObtained)
+    console.log(errorsObtained);
     if (errorsObtained.length > 0) {
       setErrors(errorsObtained);
       return;
@@ -164,7 +164,7 @@ function CreateReviewPage() {
       professor: professorId,
       subject: selectedSubject,
       body: userReview,
-      grade_received: displayGrade ? -1 : grade ,
+      grade_received: displayGrade ? -1 : grade,
       would_take_again: wouldTakeAgain,
       quality_rating: qualityRating,
       difficulty_rating: difficultyRating,
@@ -188,35 +188,37 @@ function CreateReviewPage() {
           <div className="xl:w-1/2 w-full flex-col flex">
             <form onSubmit={handleReviewSubmit} className="flex flex-wrap">
               <div className="flex flex-col w-full  space-y-2 p-2">
-                <label className={`${notoSerif.className} font-bold`}>
-                  Departamento
-                </label>
-                <select
-                  className="appearance-none w-full bg-white  border-grademic-black-900 border-2 rounded-md px-4 py-2 pr-8 leading-tight focus:outline-none focus:border-grademic-white-600"
-                  value={selectedSubject}
-                  onChange={(e) => setSelectedSubject(e.target.value)}
-                >
-                  <option
-                    disabled
-                    selected
-                    className="py-2"
-                    value={"noopt"}
-                    label="Selecciona una clase..."
-                  />
-                  {professorData?.expand?.subjects?.map((subject) => (
+                <ErrorWrapper errors={errors} name="department">
+                  <label className={`${notoSerif.className} font-bold`}>
+                    Departamento
+                  </label>
+                  <select
+                    className="appearance-none w-full bg-white  border-grademic-black-900 border-2 rounded-md px-4 py-2 pr-8 leading-tight focus:outline-none focus:border-grademic-white-600"
+                    value={selectedSubject}
+                    onChange={(e) => setSelectedSubject(e.target.value)}
+                  >
                     <option
-                      key={subject.id}
+                      disabled
+                      selected
                       className="py-2"
-                      value={subject.id}
-                      label={subject.name}
+                      value={"noopt"}
+                      label="Selecciona una clase..."
                     />
-                  ))}
-                  <option
-                    className="py-2"
-                    value={"create"}
-                    label="No veo la clase que estoy buscando."
-                  />
-                </select>
+                    {professorData?.expand?.subjects?.map((subject) => (
+                      <option
+                        key={subject.id}
+                        className="py-2"
+                        value={subject.id}
+                        label={subject.name}
+                      />
+                    ))}
+                    <option
+                      className="py-2"
+                      value={"create"}
+                      label="No veo la clase que estoy buscando."
+                    />
+                  </select>
+                </ErrorWrapper>
               </div>
 
               <div className="flex flex-col w-full xl:w-1/2 space-y-2 p-2">
