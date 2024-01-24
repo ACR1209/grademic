@@ -11,7 +11,7 @@ Below I list all the features Grademic has and all the features it'll have:
 - [ ] It allows to create new universities if not found, to create a new university you will need to introduce the name, the country, the state, the city and their website; this will have to pass human verification.
 - [ ] It allows registered users to like comments.
 - [ ] It allows registered users to save professors for later review.
-- [ ] It allows every user to review a professor, where a review contains the tags of a professor, the class taken, the grade received, if you would take this professor again, the rate from 1 to 5 for both difficulty and quality and an optional written review.
+- [x] ~~It allows every user to review a professor, where a review contains the tags of a professor, the class taken, the grade received, if you would take this professor again, the rate from 1 to 5 for both difficulty and quality and an optional written review.~~
 - [ ] It should remove reviews that include profanities or derogatory terms.
 - [x] ~~It should allow to search the professors by their name.~~
 - [x] ~~In the professor page it should show the average score and their top 3 tags, as well as all the reviews.~~
