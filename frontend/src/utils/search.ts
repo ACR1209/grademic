@@ -29,10 +29,11 @@ export async function searchUniversity(
       .collection("universities")
       .getFullList<University>({
         filter: `name ~ '${query.trim().toLowerCase()}'`,
+        expand: "state,state.country"
       });
     return records;
   } catch (error) {
-    console.error("Error while fetching professor: " + error);
+    console.error("Error while fetching universities: " + error);
     return null;
   }
 }

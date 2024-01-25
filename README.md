@@ -15,6 +15,6 @@ Below I list all the features Grademic has and all the features it'll have:
 - [ ] It should remove reviews that include profanities or derogatory terms.
 - [x] ~~It should allow to search the professors by their name.~~
 - [x] ~~In the professor page it should show the average score and their top 3 tags, as well as all the reviews.~~
-- [ ] It should allow to search the university by name and see all their professors.
+- [x] ~~It should allow to search the university by name and see all their professors.~~
 - [ ] It allows registered user to modify and manage their reviews
 - [ ] When checking all the university professors you should be able to filter by department.
