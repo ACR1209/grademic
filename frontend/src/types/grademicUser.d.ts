@@ -4,7 +4,7 @@ import { Professor } from "./professors"
 export type GrademicUser = {
     id: string
     email: string
-    likedProfessors?: Professor
+    likedProfessors?: string[]
     created: string
     updated: string
 }

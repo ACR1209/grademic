@@ -2,12 +2,21 @@ import AuthForm, { AuthData } from "@/components/AuthForm/AuthForm";
 import AuthHeader from "@/components/AuthHeader/AuthHeader";
 import ImageWBackground from "@/components/ImageWBackground/ImageWBackground";
 import PageWithNavbarNoFooter from "@/layout/PageWithNavbarNoFooter";
+import { signIn } from "next-auth/react";
 import React, { FormEvent } from "react";
 
 function Login() {
-  const handleLogin = (e: FormEvent<HTMLFormElement>, authData: AuthData) => {
+  const handleLogin = async (
+    e: FormEvent<HTMLFormElement>,
+    authData: AuthData
+  ) => {
     e.preventDefault();
-    console.log("gere")
+
+    await signIn("credentials", {
+      email: authData.email,
+      password: authData.password,
+      callbackUrl: "/",
+    });
   };
   return (
     <PageWithNavbarNoFooter>
@@ -18,12 +27,17 @@ function Login() {
             subtitle="Porfavor introduce tus credenciales para iniciar sesión."
           />
           <div className="mt-5">
-
-          <AuthForm handleSubmit={handleLogin} buttonContent="Iniciar sesión en Grademic"/>
+            <AuthForm
+              handleSubmit={handleLogin}
+              buttonContent="Iniciar sesión en Grademic"
+            />
           </div>
         </div>
         <div className="w-full lg:w-2/3">
-          <ImageWBackground color="grademic-yellow-800" path="/loginSized.png"/>
+          <ImageWBackground
+            color="grademic-yellow-800"
+            path="/loginSized.png"
+          />
         </div>
       </div>
     </PageWithNavbarNoFooter>

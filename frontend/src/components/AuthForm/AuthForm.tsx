@@ -29,7 +29,7 @@ function AuthForm({
       <div className="flex flex-col my-3">
         <label className={`${notoSerif.className} font-bold text-sm`}>Contraseña</label>
         <input
-          type="text"
+          type="password"
           name="password"
           className="border-2 border-grademic-black-900 bg-grademic-white-800 px-3 py-2 rounded-lg"
           onChange={(e) => {
